@@ -34,7 +34,6 @@
 
 #define BITBAND_PERI_BASE 0x40000000UL
 #define ALIAS_PERI_BASE 0x42000000UL
-
 #define BITBAND_PERI(addr, bit)                                                \
   ((volatile uint32_t *)(ALIAS_PERI_BASE +                                     \
                          (((uint32_t)(addr) - BITBAND_PERI_BASE) * 32U +       \
@@ -74,8 +73,13 @@ static void MX_GPIO_Init(void);
 int main(void) {
 
   /* USER CODE BEGIN 1 */
+  /* volatile says to compiler not to optimized variable
+  it means -  It will tell the compiler not to cache the value
+  of this variable. So it will generate code to take the value
+  of the given volatile variable from the main memory every
+  time it encounters it. */
   volatile uint32_t *GPIOC_ODR =
-      (volatile uint32_t *)(GPIOC_PERH_ADDR + ODR_ADDR_OFF);
+      (volatile uint32_t *)(GPIOC_PERH_ADDR + ODR_ADDR_OFF); // 0x40020814
   volatile uint32_t *GPIOC_PIN13 = BITBAND_PERI(GPIOC_ODR, 13);
   /* USER CODE END 1 */
 
@@ -99,7 +103,7 @@ int main(void) {
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-  *GPIOC_PIN13 = 1; // установить PC13 в HIGH
+  *GPIOC_PIN13 = 0; // установить PC13 в HIGH
 
   /* USER CODE END 2 */
 
