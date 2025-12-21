@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "STM32 Debug (OpenOCD)",
+      "cwd": "${workspaceFolder}",
+      "type": "cortex-debug",
+      "executable": "${workspaceFolder}/build/Debug/WatchDOGusingSTM32F401RCT6.elf",
+      "request": "launch",
+      "servertype": "openocd",
+      "serverpath": "D:/Programs/Creativity/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.3.200.202404091248/tools/bin/openocd.exe",
+      "configFiles": [
+        "debugConfig.cfg"
+      ],
+      "searchDir": [
+        "D:/Programs/Creativity/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.debug.openocd_2.2.100.202406131243/resources/openocd/st_scripts"
+      ],
+      "armToolchainPath": "D:/Programs/Creativity/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_2.1.200.202404091248/tools/bin",
+      "gdbPath": "D:/Programs/Creativity/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_2.1.200.202404091248/tools/bin/arm-none-eabi-gdb.exe",
+      "device": "STM32F401RCTx",
+      "runToEntryPoint": "main",
+      "showDevDebugOutput": "terse"
+    }
+  ]
+}
