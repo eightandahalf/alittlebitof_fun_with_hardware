@@ -61,7 +61,7 @@ main-build: OpenOCDFileForWatchDOG.elf secondary-outputs
 
 # Tool invocations
 OpenOCDFileForWatchDOG.elf OpenOCDFileForWatchDOG.map: $(OBJS) $(USER_OBJS) D:\Self_experience\alittlebitof_fun_with_hardware\OpenOCDFileForWatchDOG\STM32F401RCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "OpenOCDFileForWatchDOG.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Self_experience\alittlebitof_fun_with_hardware\OpenOCDFileForWatchDOG\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="OpenOCDFileForWatchDOG.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "OpenOCDFileForWatchDOG.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Self_experience\alittlebitof_fun_with_hardware\OpenOCDFileForWatchDOG\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="OpenOCDFileForWatchDOG.map" -Wl,--gc-sections -static  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
