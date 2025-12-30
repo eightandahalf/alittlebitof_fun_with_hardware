@@ -69,6 +69,44 @@ As a result, only DMA2 streams are able to perform memory-to-memory transfers."
 
 ----------------------------------------------------------
 
+----------------------------------------------------------
+
+Как наглядно увидеть принцип режима NORMAL
+---------------------------
+Если установить:
+
+hdma_tim1_up.Init.Mode = DMA_NORMAL;
+
+то можно проверить поведение DMA при разной длине массива.
+
+Пример:
+
+uint32_t data[] = {0xFFFF, 0x0, 0xFFFF, 0x0, 0xFFFF, 0x0, 0xFFFF, 0x0, 0xFFFF, 0x0, 0xFFFF, 0x0};
+
+HAL_Init();
+SystemClock_Config();
+MX_GPIO_Init();
+MX_DMA_Init();
+MX_TIM1_Init();
+
+if(HAL_TIM_Base_Start(&htim1) != HAL_OK) Error_Handler();
+HAL_DMA_Start(&hdma_tim1_up, (uint32_t)data, (uint32_t)&GPIOC->ODR, 6);
+__HAL_TIM_ENABLE_DMA(&htim1, TIM_DMA_UPDATE);
+
+Результат:
+- Светодиод моргнёт 4 раза и останется гореть (так как последний элемент массива = 0x0).
+- При инициализации GPIO используется `HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);`, поэтому LED стартует во включённом состоянии.
+
+Если изменить длину передачи:
+
+HAL_DMA_Start(&hdma_tim1_up, (uint32_t)data, (uint32_t)&GPIOC->ODR, 4);
+
+
+то LED моргнёт 3 раза и остановится.
+
+Важно: всегда прописывайте массив `data[]` с нужным количеством элементов, иначе DMA будет читать мусор.
+----------------------------------------------------------
+
 Итог
 ----
 Каждое событие UPDATE таймера TIM1 вызывает DMA, который переносит очередное значение из массива в GPIOC->ODR.  
