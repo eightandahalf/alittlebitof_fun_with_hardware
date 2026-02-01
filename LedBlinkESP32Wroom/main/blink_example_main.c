@@ -14,7 +14,6 @@
 #include "sdkconfig.h"
 #include <stdio.h>
 
-
 static const char *TAG = "example";
 
 /* Use project configuration menu (idf.py menuconfig) to choose the GPIO to
