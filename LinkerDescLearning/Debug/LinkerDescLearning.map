@@ -1,26 +1,67 @@
+Archive member included to satisfy reference by file (symbol)
+
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-memcpy-stub.o)
+                              ./src/main.o (memcpy)
 
 Discarded input sections
 
+ .group         0x00000000        0xc ./src/ccm_vector.o
+ .text          0x00000000        0x0 ./src/ccm_vector.o
+ .data          0x00000000        0x0 ./src/ccm_vector.o
+ .bss           0x00000000        0x0 ./src/ccm_vector.o
  .group         0x00000000        0xc ./src/main.o
- .text          0x00000000        0x0 ./src/main.o
- .data          0x00000000        0x0 ./src/main.o
- .bss           0x00000000        0x0 ./src/main.o
- .isr_vector    0x00000000        0x8 ./src/main.o
- .data.dataVar  0x00000000        0x4 ./src/main.o
- .bss.bssVar    0x00000000        0x4 ./src/main.o
- .text.__initialize_bss
-                0x00000000       0x2e ./src/main.o
- .text._start   0x00000000       0x34 ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
+ .data          0x00000000        0x4 ./src/main.o
+ .rodata        0x00000000       0x28 ./src/main.o
+ .debug_macro   0x00000000      0xa96 ./src/main.o
+ .text          0x00000000        0x0 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-memcpy-stub.o)
+ .data          0x00000000        0x0 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-memcpy-stub.o)
+ .bss           0x00000000        0x0 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-memcpy-stub.o)
 
 Memory Configuration
 
 Name             Origin             Length             Attributes
 FLASH            0x08000000         0x00080000         xr
 SRAM             0x20000000         0x00010000         xrw
+CCM              0x10000000         0x00001000         xrw
+RAM              0x00000000         0xffffffff
 *default*        0x00000000         0xffffffff
 
 Linker script and memory map
 
+LOAD ./src/ccm_vector.o
 LOAD ./src/main.o
 START GROUP
 LOAD C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a
@@ -40,37 +81,51 @@ LOAD C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
 LOAD C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a
 LOAD C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libnosys.a
 END GROUP
+                0xffffffff                        _estack = (ORIGIN (RAM) + LENGTH (RAM))
+                0x00000200                        _Min_Stack_Size = 0x200
+                0x00000190                        _Heap_Size = 0x190
 
-.text           0x08000000       0x64
- *(.vector_table)
+.text           0x08000000      0x230
+ *(.isr_vector)
+ .isr_vector    0x08000000        0x8 ./src/main.o
+                0x08000000                vector_table
  *(.text)
+ .text          0x08000008      0x20c ./src/main.o
+                0x080000a0                _sbrk
+                0x080000f4                __initialize_bss
+                0x08000122                __initialize_data
+                0x08000158                _start
+                0x080001c4                main
+                0x080001f4                delay
  *(.text*)
- .text.main     0x08000000       0x44 ./src/main.o
-                0x08000000                main
- .text.delay    0x08000044       0x20 ./src/main.o
-                0x08000044                delay
- *(.vector_table)
-                0x08000064                        _sidata = LOADADDR (.data)
+ .text.memcpy   0x08000214       0x1c C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-memcpy-stub.o)
+                0x08000214                memcpy
+ *(.isr_vector)
 
-.glue_7         0x08000064        0x0
- .glue_7        0x08000064        0x0 linker stubs
+.glue_7         0x08000230        0x0
+ .glue_7        0x08000230        0x0 linker stubs
 
-.glue_7t        0x08000064        0x0
- .glue_7t       0x08000064        0x0 linker stubs
+.glue_7t        0x08000230        0x0
+ .glue_7t       0x08000230        0x0 linker stubs
 
-.vfp11_veneer   0x08000064        0x0
- .vfp11_veneer  0x08000064        0x0 linker stubs
+.vfp11_veneer   0x08000230        0x0
+ .vfp11_veneer  0x08000230        0x0 linker stubs
 
-.v4_bx          0x08000064        0x0
- .v4_bx         0x08000064        0x0 linker stubs
+.v4_bx          0x08000230        0x0
+ .v4_bx         0x08000230        0x0 linker stubs
 
-.iplt           0x08000064        0x0
- .iplt          0x08000064        0x0 ./src/main.o
+.iplt           0x08000230        0x0
+ .iplt          0x08000230        0x0 ./src/ccm_vector.o
 
-.rel.dyn        0x08000064        0x0
- .rel.iplt      0x08000064        0x0 ./src/main.o
+.rel.dyn        0x08000230        0x0
+ .rel.iplt      0x08000230        0x0 ./src/ccm_vector.o
 
-.data           0x20000000        0x0 load address 0x08000064
+.rodata
+ *(.rodata)
+ *(.rodata*)
+                0x08000230                        _sidata = LOADADDR (.data)
+
+.data           0x20000000        0x0 load address 0x08000230
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -78,52 +133,141 @@ END GROUP
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _edata = .
 
-.igot.plt       0x20000000        0x0 load address 0x08000064
- .igot.plt      0x20000000        0x0 ./src/main.o
+.igot.plt       0x20000000        0x0 load address 0x08000230
+ .igot.plt      0x20000000        0x0 ./src/ccm_vector.o
 
-.bss            0x20000000        0x0
+.bss            0x20000000        0x8
                 0x20000000                        _sbss = .
  *(.bss .bss*)
+ .bss           0x20000000        0x8 ./src/main.o
+                0x20000000                bssVar
  *(COMMON)
-                0x20000000                        . = ALIGN (0x4)
-                0x20000000                        _ebss = .
+                0x20000008                        . = ALIGN (0x4)
+                0x20000008                        _ebss = .
+
+._user_heap_stack
+                0x20000008      0x390
+                0x20000008                        . = ALIGN (0x4)
+                0x20000198                        . = (. + _Heap_Size)
+ *fill*         0x20000008      0x190 
+                0x20000398                        . = (. + _Min_Stack_Size)
+ *fill*         0x20000198      0x200 
+                0x20000398                        . = ALIGN (0x4)
+                0x08000230                        _slccm = LOADADDR (.ccm)
+
+.ccm            0x10000000       0x64 load address 0x08000230
+                0x10000000                        _sccm = .
+ *(.isr_vector_ccm)
+ .isr_vector_ccm
+                0x10000000       0x40 ./src/ccm_vector.o
+                0x10000000                ccm_vector_table
+ *(.ccm)
+ .ccm           0x10000040       0x24 ./src/ccm_vector.o
+                0x10000040                SysTick_Handler
+ *(.isr_vector_ccm .ccm)
+                0x10000064                        . = ALIGN (0x4)
+                0x10000064                        _eccm = .
+                0x00000064                        _ccmsize = (_eccm - _sccm)
+                0x08000294                        _siccm = LOADADDR (.ccm.data)
+
+.ccm.data       0x10000064        0x0 load address 0x08000294
+                0x10000064                        _sccmd = .
+ *(.ccm.data .ccm.data*)
+                0x10000064                        . = ALIGN (0x4)
+                0x10000064                        _eccmd = .
+
+.ccm.bss        0x10000064        0x0 load address 0x08000294
+                0x10000064                        _sccmb = .
+ *(ccm.bss ccm.bss*)
+                0x10000064                        . = ALIGN (0x4)
+                0x10000064                        _eccmb = .
+                0x20000008                        _end_static = _ebss
+                0x20000198                        _Heap_Limit = (_end_static + _Heap_Size)
 OUTPUT(LinkerDescLearning.elf elf32-littlearm)
 LOAD linker stubs
 
-.debug_info     0x00000000      0x18f
- .debug_info    0x00000000      0x18f ./src/main.o
+.debug_info     0x00000000      0xad0
+ .debug_info    0x00000000       0x7b ./src/ccm_vector.o
+ .debug_info    0x0000007b      0xa55 ./src/main.o
 
-.debug_abbrev   0x00000000      0x132
- .debug_abbrev  0x00000000      0x132 ./src/main.o
+.debug_abbrev   0x00000000      0x2fc
+ .debug_abbrev  0x00000000       0x79 ./src/ccm_vector.o
+ .debug_abbrev  0x00000079      0x283 ./src/main.o
 
-.debug_aranges  0x00000000       0x38
+.debug_aranges  0x00000000       0x40
  .debug_aranges
-                0x00000000       0x38 ./src/main.o
+                0x00000000       0x20 ./src/ccm_vector.o
+ .debug_aranges
+                0x00000020       0x20 ./src/main.o
 
 .debug_rnglists
-                0x00000000       0x25
+                0x00000000       0x13
  .debug_rnglists
-                0x00000000       0x25 ./src/main.o
+                0x00000000       0x13 ./src/ccm_vector.o
 
-.debug_macro    0x00000000      0xae3
- .debug_macro   0x00000000       0x4d ./src/main.o
- .debug_macro   0x0000004d      0xa96 ./src/main.o
+.debug_macro    0x00000000    0x180dd
+ .debug_macro   0x00000000       0x4d ./src/ccm_vector.o
+ .debug_macro   0x0000004d      0xa96 ./src/ccm_vector.o
+ .debug_macro   0x00000ae3      0x20a ./src/main.o
+ .debug_macro   0x00000ced       0x22 ./src/main.o
+ .debug_macro   0x00000d0f       0x5b ./src/main.o
+ .debug_macro   0x00000d6a       0x24 ./src/main.o
+ .debug_macro   0x00000d8e       0x94 ./src/main.o
+ .debug_macro   0x00000e22       0x43 ./src/main.o
+ .debug_macro   0x00000e65       0x34 ./src/main.o
+ .debug_macro   0x00000e99      0x189 ./src/main.o
+ .debug_macro   0x00001022       0x16 ./src/main.o
+ .debug_macro   0x00001038       0x43 ./src/main.o
+ .debug_macro   0x0000107b       0x57 ./src/main.o
+ .debug_macro   0x000010d2       0x34 ./src/main.o
+ .debug_macro   0x00001106       0x10 ./src/main.o
+ .debug_macro   0x00001116       0x58 ./src/main.o
+ .debug_macro   0x0000116e       0x8e ./src/main.o
+ .debug_macro   0x000011fc       0x1c ./src/main.o
+ .debug_macro   0x00001218      0x177 ./src/main.o
+ .debug_macro   0x0000138f      0x369 ./src/main.o
+ .debug_macro   0x000016f8       0x10 ./src/main.o
+ .debug_macro   0x00001708       0x35 ./src/main.o
+ .debug_macro   0x0000173d       0x20 ./src/main.o
+ .debug_macro   0x0000175d       0x16 ./src/main.o
+ .debug_macro   0x00001773       0x16 ./src/main.o
+ .debug_macro   0x00001789       0x29 ./src/main.o
+ .debug_macro   0x000017b2      0x103 ./src/main.o
+ .debug_macro   0x000018b5       0x6a ./src/main.o
+ .debug_macro   0x0000191f      0x1df ./src/main.o
+ .debug_macro   0x00001afe       0xd3 ./src/main.o
+ .debug_macro   0x00001bd1       0x28 ./src/main.o
+ .debug_macro   0x00001bf9     0x102d ./src/main.o
+ .debug_macro   0x00002c26      0x11f ./src/main.o
+ .debug_macro   0x00002d45    0x1535a ./src/main.o
+ .debug_macro   0x0001809f       0x1c ./src/main.o
+ .debug_macro   0x000180bb       0x22 ./src/main.o
 
-.debug_line     0x00000000       0xdf
- .debug_line    0x00000000       0xdf ./src/main.o
+.debug_line     0x00000000      0x7df
+ .debug_line    0x00000000       0x6c ./src/ccm_vector.o
+ .debug_line    0x0000006c      0x773 ./src/main.o
 
-.debug_str      0x00000000     0x2f82
- .debug_str     0x00000000     0x2f82 ./src/main.o
-                               0x2fa1 (size before relaxing)
+.debug_str      0x00000000    0x862e7
+ .debug_str     0x00000000     0x2ed1 ./src/ccm_vector.o
+                               0x2ef9 (size before relaxing)
+ .debug_str     0x00002ed1    0x83416 ./src/main.o
+                              0x86629 (size before relaxing)
 
 .comment        0x00000000       0x43
- .comment       0x00000000       0x43 ./src/main.o
+ .comment       0x00000000       0x43 ./src/ccm_vector.o
                                  0x44 (size before relaxing)
+ .comment       0x00000043       0x44 ./src/main.o
 
 .ARM.attributes
                 0x00000000       0x2e
  .ARM.attributes
-                0x00000000       0x2e ./src/main.o
+                0x00000000       0x2e ./src/ccm_vector.o
+ .ARM.attributes
+                0x0000002e       0x2e ./src/main.o
+ .ARM.attributes
+                0x0000005c       0x2e C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-memcpy-stub.o)
 
-.debug_frame    0x00000000       0x98
- .debug_frame   0x00000000       0x98 ./src/main.o
+.debug_frame    0x00000000      0x18c
+ .debug_frame   0x00000000       0x30 ./src/ccm_vector.o
+ .debug_frame   0x00000030      0x134 ./src/main.o
+ .debug_frame   0x00000164       0x28 C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-memcpy-stub.o)

@@ -1,4 +1,8 @@
-../src/main.c:46:6:__initialize_bss	24	static
-../src/main.c:58:38:_start	8	static
-../src/main.c:65:5:main	8	static
-../src/main.c:79:6:delay	16	static
+../Drivers/CMSIS/Include/core_cm4.h:1817:22:__NVIC_SetPriority	16	static
+../Drivers/CMSIS/Include/core_cm4.h:2023:26:SysTick_Config	16	static
+../src/main.c:61:7:_sbrk	24	static,ignoring_inline_asm
+../src/main.c:80:6:__initialize_bss	24	static
+../src/main.c:86:6:__initialize_data	32	static
+../src/main.c:92:38:_start	8	static,ignoring_inline_asm
+../src/main.c:106:5:main	8	static
+../src/main.c:125:6:delay	16	static

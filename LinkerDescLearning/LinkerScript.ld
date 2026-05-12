@@ -3,10 +3,17 @@ MEMORY
 {
 	FLASH (rx) : ORIGIN = 0x08000000, LENGTH = 512K /* (w = доступна для записи, r = читаемая, x = исполняемая) */
 	SRAM (xrw) : ORIGIN = 0x20000000, LENGTH = 64K
+	CCM (xrw) : ORIGIN = 0x10000000, LENGTH = 4K
 }
 
 /* Точка входа приложения */
 ENTRY(main)
+
+/* Highest address of the user mode stack */
+_estack = ORIGIN(RAM) + LENGTH(RAM); /* end of "RAM" Ram type memory */
+
+_Min_Stack_Size = 0x200;
+_Heap_Size = 0x190;
 
 /* Секции на выходе */
 SECTIONS
@@ -14,15 +21,22 @@ SECTIONS
 	/* Код программы во FLASH */
 	.text : ALIGN(4) /* Секция будет выровнена по словам (4 Байт) */
 	{
-		*(.vector_table) /* Таблица векторов */
+		*(.isr_vector) /* Таблица векторов с именем секции isr_vector */
 		*(.text) /* Код программы */
 		*(.text*) /* Объединение всех секций .text.* в секцию .text */
-		KEEP(*(.vector_table)) /* Указание компоновщику LD удерживать таблицу векторов в конечном абсолютном файле, иначе секция может быть "отброшена" другими инструментами, выполняющими оптимизацию конечного файла */
+		KEEP(*(.isr_vector)) /* Указание компоновщику LD удерживать таблицу векторов в конечном абсолютном файле, иначе секция может быть "отброшена" другими инструментами, выполняющими оптимизацию конечного файла */
 	} >FLASH /* Секция будет помещена во Flash память */
-	
+		
+	/* Постоянные данные помещаются во Flash-память */
+	.rodata : ALIGN(4)
+	{
+		*(.rodata)  /* секции .rodata (константы) */
+		*(.rodata*) /* секции .rodata* (строки и т.п.) */	
+	} >FLASH
+		
 	/* Используем при запуске для инициализации данных */
 	_sidata = LOADADDR(.data); /* Адрес LMA секции .data (то есть начальный адрес Flash-памяти, содержащий значения инициализации) */
-	
+			
 	/* Инициализированные глобальные и статические переменные в SRAM.
 	 Оператор “.” называется счетчиком адресов (location counter) и является счетчиком, который отслеживает ячейку памяти, достигнутую во время генерации каждой секции */
 	.data : ALIGN(4)
@@ -49,4 +63,53 @@ SECTIONS
 		. = ALIGN(4);
 		_ebss = .; /* Определениен глобального символьного имени конца .bss */
 	} >SRAM AT>SRAM
+	
+	/* Секция User_heap_stack, используемая для проверки того, что осталось достаточно ОЗУ */
+	._user_heap_stack :
+	{
+		. = ALIGN(4);
+		. = . + _Heap_Size;
+		. = . + _Min_Stack_Size;
+		. = ALIGN(4);
+	} >SRAM
+	
+		/* Используется кодом запуска (startup) для загрузки ISR в CCM из FLASH */
+	_slccm = LOADADDR(.ccm);
+
+	.ccm : ALIGN(4)
+	{
+		_sccm = .;
+		*(.isr_vector_ccm)
+		*(.ccm)
+		KEEP(*(.isr_vector_ccm .ccm))
+		. = ALIGN(4);
+		_eccm = .;
+	} >CCM AT>FLASH
+	
+	/* Размер секции .ccm */
+	_ccmsize = _eccm - _sccm;
+
+	/* Используется кодом запуска (startup) для инициализации данных в CCM */
+	_siccm = LOADADDR(.ccm.data);
+	
+	/* Секция инициализированных данных в CCM */
+	.ccm.data : ALIGN(4)
+	{
+		_sccmd = .;
+		*(.ccm.data .ccm.data*)
+		. = ALIGN(4);
+		_eccmd = .;
+	} >CCM AT>FLASH
+	
+	/* Секция неинициализированных данных в CCM */
+	.ccm.bss (NOLOAD) : ALIGN(4)
+	{
+		_sccmb = .;
+		*(ccm.bss ccm.bss*)
+		. = ALIGN(4);
+		_eccmb = .;
+	} >CCM
+	
+	_end_static = _ebss;
+	_Heap_Limit = _end_static + _Heap_Size;
 }
